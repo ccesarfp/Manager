@@ -16,6 +16,7 @@ import jakarta.persistence.Table;
 public class Player extends Person {
     // properties
     private static Player instance;
+
     @Id
     private Long id;
 
@@ -31,9 +32,15 @@ public class Player extends Person {
     }
 
     //Usando Singleton
-    public static synchronized Player getInstance(String username, String email, String password) {
+    public static Player getInstance(String username, String email, String password) {
         if (instance == null) {
             instance = new Player(username, email, password);
+        }
+        return instance;
+    }
+    public static Player getInstance() {
+        if (instance == null) {
+            instance = new Player();
         }
         return instance;
     }

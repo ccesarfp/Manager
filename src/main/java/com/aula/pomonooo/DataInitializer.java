@@ -20,9 +20,9 @@ public class DataInitializer implements ApplicationRunner {
     @Autowired
     EmployeeService eServ;
 
-    //private final Player player;
+    private final Player player;
     @Autowired
-    PlayerService ePlay;
+    PlayerService pServ;
 
     private final Analyst analyst;
     private final Developer developer;
@@ -31,12 +31,12 @@ public class DataInitializer implements ApplicationRunner {
     RoleService rServ;
 
     @Autowired
-    public DataInitializer() {
+    public DataInitializer(Player player) {
         analyst = new Analyst();
         developer = new Developer();
         customerService = new CustomerService();
         employee = new Employee("ccesarfp", "email@email.com", "1234", "Caio", "analyst");
-        //player = new Player();
+        this.player = Player.getInstance("Cara Maneiro", "email@email.com", "1234");
     }
 
     @Override
@@ -50,5 +50,6 @@ public class DataInitializer implements ApplicationRunner {
         eServ.saveEmployee(employee);
         employee = new Employee("Zunda", "email@email.com", "91011", "Gustavo", "customerService");
         eServ.saveEmployee(employee);
+        pServ.savePlayer(Player.getInstance());
     }
 }

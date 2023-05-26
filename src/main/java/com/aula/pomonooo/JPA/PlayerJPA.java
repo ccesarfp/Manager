@@ -1,6 +1,5 @@
 package com.aula.pomonooo.JPA;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,4 +21,10 @@ public class PlayerJPA {
     private int coins;
 
     private double money;
+
+    @Override
+    public String toString() {
+        return "<br><hr>Username: " + personJPA.getUsername() + "<br>Email: " + personJPA.getEmail()
+                + "<br>Coins: " + getCoins() + "<br>Money: " + getMoney();
+    }
 }

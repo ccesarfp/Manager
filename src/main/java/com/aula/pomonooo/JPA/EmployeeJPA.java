@@ -31,7 +31,7 @@ public class EmployeeJPA {
 
     @Override
     public String toString() {
-        return "Name: " + getName() + "<br>Username: " + personJPA.getUsername() + "<br>Email: " + personJPA.getEmail()
-                + "<br>Função: " + (roleJPA != null ? roleJPA.getName() : "<br>");
+        return "<br><hr>Name: " + getName() + "<br>Username: " + personJPA.getUsername() + "<br>Email: " + personJPA.getEmail()
+                + "<br>Role: " + (roleJPA != null ? roleJPA.getName() : "<br>");
     }
 }

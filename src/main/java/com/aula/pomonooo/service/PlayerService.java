@@ -2,11 +2,15 @@ package com.aula.pomonooo.service;
 
 import com.aula.pomonooo.DAO.PersonDAO;
 import com.aula.pomonooo.DAO.PlayerDAO;
+import com.aula.pomonooo.JPA.EmployeeJPA;
 import com.aula.pomonooo.JPA.PersonJPA;
 import com.aula.pomonooo.JPA.PlayerJPA;
 import com.aula.pomonooo.model.Player;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -29,4 +33,8 @@ public class PlayerService {
         return true;
     }
 
+    public List<PlayerJPA> readEmployees()
+    {
+        return new ArrayList<>(playerDAO.findAll());
+    }
 }
