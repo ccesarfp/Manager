@@ -1,4 +1,4 @@
-package com.aula.pomonooo.View;
+package com.aula.pomonooo.controller;
 import com.aula.pomonooo.JPA.RoleJPA;
 import com.aula.pomonooo.model.Employee;
 import com.aula.pomonooo.model.Player;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class AppView {
+public class AppController {
     private final DatabaseConnectionChecker connectionChecker;
     @Autowired
-    public AppView(DatabaseConnectionChecker connectionChecker) {
+    public AppController(DatabaseConnectionChecker connectionChecker) {
         this.connectionChecker = connectionChecker;
     }
 

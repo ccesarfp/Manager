@@ -1,11 +1,13 @@
 package com.aula.pomonooo.JPA;
-
 import jakarta.persistence.*;
-
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "employees")
-public class Employee {
+@Getter
+@Setter
+public class EmployeeJPA {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,54 +15,23 @@ public class Employee {
 
     private String name;
 
-    private String email;
-
-    private String password;
+    // Relacionamento com Person
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private PersonJPA personJPA;
 
     // Relacionamento com Role
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
-    private Role role;
-
-    // getters e setters
+    private RoleJPA roleJPA;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
+    @Override
+    public String toString() {
+        return "Name: " + getName() + "<br>Username: " + personJPA.getUsername() + "<br>Email: " + personJPA.getEmail()
+                + "<br>Função: " + (roleJPA != null ? roleJPA.getName() : "<br>");
     }
 }
