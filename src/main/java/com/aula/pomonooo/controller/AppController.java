@@ -1,19 +1,20 @@
-package com.aula.pomonooo;
+package com.aula.pomonooo.View;
+import com.aula.pomonooo.JPA.RoleJPA;
 import com.aula.pomonooo.model.Employee;
 import com.aula.pomonooo.model.Player;
 import com.aula.pomonooo.config.DatabaseConnectionChecker;
+import com.aula.pomonooo.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import javax.sql.DataSource;
 
 @RestController
 @RequestMapping("/test")
-public class PomoNoooTester {
+public class AppView {
     private final DatabaseConnectionChecker connectionChecker;
     @Autowired
-    public PomoNoooTester(DatabaseConnectionChecker connectionChecker) {
+    public AppView(DatabaseConnectionChecker connectionChecker) {
         this.connectionChecker = connectionChecker;
     }
 
@@ -22,7 +23,6 @@ public class PomoNoooTester {
         connectionChecker.checkConnection();
         return "Connection check completed. Please check the console logs for the result.";
     }
-
 
     @GetMapping("/methods")
     public String executeMethods() {
@@ -36,6 +36,11 @@ public class PomoNoooTester {
                 "<p>"+player+"</p>" +
                 "<p>"+player.accessApp()+"</p>" +
                 "<p>"+player.playGame()+"</p>";
+    }
+
+    @GetMapping("/role")
+    public RoleJPA testRole() {
+        return RoleService.getRoleByName("Analyst");
     }
 
 }
