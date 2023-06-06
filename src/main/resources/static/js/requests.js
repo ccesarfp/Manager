@@ -245,3 +245,14 @@ function updateRow() {
     }
     ajax.send(JSON.stringify(data));
 }
+
+function welcomePage() {
+    let ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = () => {
+        if (ajax.readyState === 4 && ajax.status === 200){
+            document.getElementById('content').innerHTML = ajax.responseText;
+        }
+    }
+    ajax.open('GET', '/persons/welcome');
+    ajax.send();
+}

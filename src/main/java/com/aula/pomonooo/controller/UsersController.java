@@ -15,7 +15,6 @@ import com.aula.pomonooo.service.PersonService;
 import com.aula.pomonooo.service.PlayerService;
 import com.aula.pomonooo.service.RoleService;
 import com.google.gson.Gson;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/persons")
@@ -129,6 +127,15 @@ public class UsersController {
     public ModelAndView players() {
         ModelAndView view = new ModelAndView();
         view.setViewName("pages/players");
+
+        return view;
+    }
+
+    @RequestMapping("/welcome")
+    @ResponseBody
+    public ModelAndView welcome() {
+        ModelAndView view = new ModelAndView();
+        view.setViewName("pages/welcome");
 
         return view;
     }

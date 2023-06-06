@@ -1,9 +1,12 @@
 let table = 'table-body';
 let content = 'content';
 document.addEventListener("DOMContentLoaded", function(event) {
+    welcomePage();
+
     document.getElementById('pomo-logo').addEventListener('click', () => {
         cleanContent(content);
         cleanMenuButton();
+        welcomePage();
     })
     document.getElementById('persons-btn').addEventListener('click', () => {
         accessPage(content, 'persons-btn', '/persons/personsPage', '/persons/', table, personTableTemplate);
@@ -42,4 +45,3 @@ function reloadScreen(el, urlPage, urlData, table_name, func) {
     cleanContent(el);
     prepareTablePage(urlPage, urlData ,table_name, func);
 }
-
