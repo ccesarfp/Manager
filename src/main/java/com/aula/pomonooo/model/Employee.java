@@ -27,13 +27,13 @@ public class Employee extends Person {
     // methods
     public void setRole(String roleName) {
         switch (roleName) {
-            case "dev":
+            case "Developer":
                 role = new Developer();
                 break;
-            case "analyst":
+            case "Analyst":
                 role = new Analyst();
                 break;
-            case "customerService":
+            case "CustomerService":
                 role = new CustomerService();
                 break;
             default:

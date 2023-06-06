@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="nodalUpdateRegister (title, url)">
+  <div class="modal fade" id="updateRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateRegisterLabel" th:text="${title}"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="form-update" th:onsubmit="'updateRow()'" th:data-url="${url}">
+            <div th:switch="${title}">
+              <div th:case="'Update Employee'" class="mb-3">
+                <label for="name-update" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name-update" name="name" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="username-update" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username-update" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="email-update" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email-update" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password-update" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password-update" name="password">
+            </div>
+            <th:block th:switch="${title}">
+              <div th:case="'Update Employee'" class="mb-3">
+                <label for="role-update" class="form-label">Role</label>
+                <select class="form-select" id="role-update" name="role" required>
+
+                </select>
+              </div>
+            </th:block>
+            <div style="display: none" id="id-update">
+            </div>
+            <div class="modal-footer">
+              <button type="button" style="opacity: 0.9;" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="submit"  style="opacity: 0.9;" class="btn btn-success" data-bs-dismiss="modal" onclick="updateRow()">Save</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

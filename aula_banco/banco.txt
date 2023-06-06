@@ -1,0 +1,6 @@
+CREATE USER "pomouser"@"%" IDENTIFIED BY "devpsw";
+GRANT ALL PRIVILEGES ON pomodb.* TO pomouser;
+FLUSH PRIVILEGES;
+
+Todos os dados criados no banco são adicionados no momento que a aplicação 
+é iniciada.

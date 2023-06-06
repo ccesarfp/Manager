@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment = "header">
+
+            <div class="container">
+                <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                    <a href="#" id="pomo-logo" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32">
+                            <img class="bi me-2" width="55" height="50" th:src="@{image/logo.svg}" alt="Pomo-Nooo! Icon">
+                        </svg>
+                        <span class="fs-4">Pomo-Manager</span>
+                    </a>
+
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                                <a href="#" id="persons-btn" class="menu-button btn btn-outline-danger mx-2">Persons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" id="employees-btn" class="menu-button btn btn-outline-danger mx-2">Employees</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" id="players-btn" class="menu-button btn btn-outline-danger mx-2">Players</a>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+
+        </div>
+    </body>
+</html>

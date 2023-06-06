@@ -5,6 +5,8 @@ import com.aula.pomonooo.JPA.RoleJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,5 +32,10 @@ public class RoleService {
     public static RoleJPA getRoleByName(String roleName) {
         Optional<RoleJPA> optionalRole = roleDAO.findByNameIgnoreCaseContaining(roleName);
         return optionalRole.orElse(null);
+    }
+
+    public List<RoleJPA> readRoles()
+    {
+        return new ArrayList<>(roleDAO.findAll());
     }
 }

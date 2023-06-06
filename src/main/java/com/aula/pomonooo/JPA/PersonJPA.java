@@ -1,6 +1,7 @@
 package com.aula.pomonooo.JPA;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,5 +23,6 @@ public class PersonJPA {
 
     private String email;
 
+    @JsonIgnore
     private String password;
 }

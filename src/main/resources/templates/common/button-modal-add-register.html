@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="buttonModalAddRegister (name)">
+        <button th:if="${name != 'employee'}" th:id="'open-modal-' + ${name}"  type="button" class="btn btn-success mb-3 float-end" data-bs-toggle="modal" data-bs-target="#addRegister" style="opacity: 0.9">
+            <i class="fa fa-plus"></i>
+        </button>
+        <button th:if="${name == 'employee'}" onclick="chargeRoles()" th:id="'open-modal-' + ${name}"  type="button" class="btn btn-success mb-3 float-end" data-bs-toggle="modal" data-bs-target="#addRegister" style="opacity: 0.9">
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
+
+</body>
+</html>

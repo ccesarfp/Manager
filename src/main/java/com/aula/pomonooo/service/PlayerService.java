@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -33,8 +34,14 @@ public class PlayerService {
         return true;
     }
 
-    public List<PlayerJPA> readEmployees()
+    public List<PlayerJPA> readPlayers()
     {
         return new ArrayList<>(playerDAO.findAll());
     }
+
+    public void deletePlayer(int id) {playerDAO.deleteById(id);}
+
+    public void updatePlayer(PlayerJPA playerJPA) {playerDAO.save(playerJPA);}
+
+    public Optional<PlayerJPA> readPlayer(int id) { return playerDAO.findById(id); }
 }

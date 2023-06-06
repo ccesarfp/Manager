@@ -1,0 +1,33 @@
+<h2 class="h2">Employee</h2>
+
+<hr>
+
+<div th:replace="~{common/button-modal-add-register :: buttonModalAddRegister ('employee')}">
+
+</div>
+
+<table class="table table-hover table-responsive" id="player-table">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+
+    </tbody>
+</table>
+
+<div th:replace="~{common/modal-add-register :: modalAddRegister (title = 'New Employee', url = '/persons/createEmployee')}">
+</div>
+
+<div th:replace="~{common/update-modal :: nodalUpdateRegister (title = 'Update Employee', url = '/persons/updateEmployee')}">
+</div>
+
+<div th:replace="~{common/delete-modal :: deleteRegister (title = 'Delete Employee', url = '/persons/deleteEmployee')}">
+</div>

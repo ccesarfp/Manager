@@ -1,4 +1,5 @@
 package com.aula.pomonooo.JPA;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,11 +28,5 @@ public class EmployeeJPA {
 
     public Long getId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "<br><hr>Name: " + getName() + "<br>Username: " + personJPA.getUsername() + "<br>Email: " + personJPA.getEmail()
-                + "<br>Role: " + (roleJPA != null ? roleJPA.getName() : "<br>");
     }
 }

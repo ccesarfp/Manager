@@ -1,0 +1,31 @@
+<h2 class="h2">Persons</h2>
+
+<hr>
+
+<div th:replace="~{common/button-modal-add-register :: buttonModalAddRegister ('person')}">
+
+</div>
+
+<table class="table table-hover table-responsive" id="player-table">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+            <th scope="col" ></th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+
+    </tbody>
+</table>
+
+<div th:replace="~{common/modal-add-register :: modalAddRegister (title = 'New Person', url = '/persons/createPerson')}">
+</div>
+
+<div th:replace="~{common/update-modal :: nodalUpdateRegister (title = 'Update Person', url = '/persons/updatePerson')}">
+</div>
+
+<div th:replace="~{common/delete-modal :: deleteRegister (title = 'Delete Person', url = '/persons/deletePerson')}">
+</div>

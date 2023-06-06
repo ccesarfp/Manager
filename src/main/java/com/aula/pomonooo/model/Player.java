@@ -62,6 +62,11 @@ public class Player extends Person {
         return "Jogando partida";
     }
 
+    public static void clear()
+    {
+        instance = null;
+    }
+
     @Override
     public String toString() {
         return "Username: " + getUsername() + "\nEmail: " + getEmail();

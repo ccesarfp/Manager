@@ -3,6 +3,7 @@ package com.aula.pomonooo.model.abstraction;
 import com.aula.pomonooo.JPA.EmployeeJPA;
 import com.aula.pomonooo.JPA.PersonJPA;
 import com.aula.pomonooo.model.Employee;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ public abstract class Person {
     // properties
     private String username;
     private String email;
+    @JsonIgnore
     private String password;
 
     public Person() {

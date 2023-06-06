@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -39,4 +40,10 @@ public class EmployeeService {
     {
         return new ArrayList<>(employeeDAO.findAll());
     }
+
+    public void deleteEmployee(int id) {employeeDAO.deleteById(id);}
+
+    public void updateEmployee(EmployeeJPA employeeJPA) {employeeDAO.save(employeeJPA);}
+
+    public Optional<EmployeeJPA> readEmployee(int id) { return employeeDAO.findById(id); }
 }

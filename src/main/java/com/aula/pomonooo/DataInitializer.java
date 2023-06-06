@@ -35,8 +35,8 @@ public class DataInitializer implements ApplicationRunner {
         analyst = new Analyst();
         developer = new Developer();
         customerService = new CustomerService();
-        employee = new Employee("ccesarfp", "email@email.com", "1234", "Caio", "analyst");
-        this.player = Player.getInstance("Cara Maneiro", "email@email.com", "1234");
+        employee = new Employee("ccesarfp", "caio@email.com", "1234", "Caio", "Analyst");
+        this.player = Player.getInstance("Cool Guy", "jorge@email.com", "1234");
     }
 
     @Override
@@ -46,9 +46,9 @@ public class DataInitializer implements ApplicationRunner {
         rServ.saveRole(customerService.getName());
 
         eServ.saveEmployee(employee);
-        employee = new Employee("MellanieKP", "email@email.com", "5678", "Mellanie", "dev");
+        employee = new Employee("MellanieKP", "mellanie@email.com", "5678", "Mellanie", "Developer");
         eServ.saveEmployee(employee);
-        employee = new Employee("Zunda", "email@email.com", "91011", "Gustavo", "customerService");
+        employee = new Employee("Zunda", "gustavo@email.com", "91011", "Gustavo", "CustomerService");
         eServ.saveEmployee(employee);
         pServ.savePlayer(Player.getInstance());
     }
