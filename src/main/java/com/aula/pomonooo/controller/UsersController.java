@@ -135,7 +135,34 @@ public class UsersController {
     @ResponseBody
     public ModelAndView welcome() {
         ModelAndView view = new ModelAndView();
-        view.setViewName("pages/welcome");
+        view.setViewName("pages/login");
+
+        return view;
+    }
+
+    @RequestMapping("/loginPage")
+    @ResponseBody
+    public ModelAndView loginPage() {
+        ModelAndView view = new ModelAndView();
+        view.setViewName("common/formLogin");
+
+        return view;
+    }
+
+    @RequestMapping("/createPage")
+    @ResponseBody
+    public ModelAndView createUser() {
+        ModelAndView view = new ModelAndView();
+        view.setViewName("common/formCreate");
+
+        return view;
+    }
+
+    @RequestMapping("/home")
+    @ResponseBody
+    public ModelAndView homeUser() {
+        ModelAndView view = new ModelAndView();
+        view.setViewName("common/home");
 
         return view;
     }

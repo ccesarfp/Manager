@@ -28,7 +28,7 @@ public class AccessController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("Content-Type", "application/json");
 
-        if (payload.get("email") == null || payload.get("password") == null) {
+        if ((payload.get("email") == null || payload.get("email").equals("")) || (payload.get("password") == null || payload.get("password").equals(""))) {
             String response = "";
             headers.add("Content-Type", "application/json");
             return new ResponseEntity<>(response, headers, HttpStatus.BAD_REQUEST); //400
@@ -58,6 +58,16 @@ public class AccessController {
             String response = "Already registered user";
             headers.add("Content-Type", "application/json");
             return new ResponseEntity<>(response, headers, HttpStatus.OK); //200
+        }
+
+        if ((payload.get("email") == null || payload.get("email").equals("")) || 
+            (payload.get("password") == null || payload.get("password").equals("")) ||
+            (payload.get("name") == null || payload.get("name").equals("")) ||
+            (payload.get("username") == null || payload.get("username").equals(""))
+            ) {
+            String response = "";
+            headers.add("Content-Type", "application/json");
+            return new ResponseEntity<>(response, headers, HttpStatus.BAD_REQUEST); //400
         }
 
         Employee employee = new Employee(payload.get("username").toString(),
