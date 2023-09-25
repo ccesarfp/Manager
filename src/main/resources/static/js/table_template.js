@@ -1,9 +1,7 @@
 function personTableTemplate(obj) {
     return `
                     <tr>
-                      <th scope="row">${obj.id}</th>
                       <td>${obj.username}</td>
-                      <td>${obj.email}</td>
                       <td>
                         <button class="btn" data-bs-toggle="modal" data-bs-target="#updateRegister" onclick="putDateForm(${obj.id}, '${obj.username}', '${obj.email}')">
                             <i class="fa fa-pencil" style="color: #e1b317; font-size:1.25em;"></i>

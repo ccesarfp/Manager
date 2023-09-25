@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <div th:fragment="formCreateAccount">
+      <div class="row justify-content-center">
+        <img
+          th:src="@{/image/logo.svg}"
+          style="width: 30%; height: 25%; max-width: 400px; margin-top: 100px"
+        />
+        <p class="text-center">O seu gerenciador de aplicativos</p>
+        <form style="max-width: 400px; margin: 20px">
+          <div class="form-group">
+            <label for="inputName">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              aria-describedby="name"
+              placeholder="Digite seu nome"
+              style="margin: 5px 0 10px 0"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail1">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="Digite seu e-mail"
+              style="margin: 5px 0 10px 0"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputPassword1">Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Digite sua senha"
+              style="margin: 5px 0 10px 0"
+            />
+          </div>
+          <div class="row justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-success"
+              onclick="createAccount()"
+              style="max-width: 200px; margin: 10px; background-color: #51ab5a"
+            >
+              Cadastrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

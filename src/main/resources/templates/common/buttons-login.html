@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <div th:fragment="buttons">
+      <div class="row justify-content-center">
+        <img
+          th:src="@{/image/logo.svg}"
+          style="width: 30%; height: 25%; max-width: 400px; margin-top: 100px"
+        />
+        <p class="text-center">O seu gerenciador de aplicativos</p>
+        <button
+          type="button"
+          id="acessLogin2"
+          class="btn btn-success"
+          onclick="accessView('content-new', '/persons/loginPage');"
+          style="max-width: 200px; margin: 10px; background-color: #51ab5a"
+        >
+          Entrar
+        </button>
+        <div></div>
+        <button
+          type="button"
+          id="createAccount"
+          class="btn btn-success"
+          onclick="accessView('content-new', '/persons/createPage');"
+          style="max-width: 200px; margin: 10px; background-color: #51ab5a"
+        >
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
